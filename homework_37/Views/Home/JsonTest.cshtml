@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "JsonTest";
+}
+
+<h1>JsonTest</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <img src="http://www.travel.taipei/d_upload_ttn/sceneadmin/pic/11000848.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">新北投溫泉區</h5>
+                <p class="card-text">北投溫泉從日據時代便有盛名，深受喜愛泡湯的日人自然不會錯過，瀧乃湯、星乃湯、鐵乃湯就是日本人依照溫泉的特性與療效給予的名稱。</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">臺北市  北投區中山路、光明路沿線</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/travel.js"></script>
+    <script>
+        // const display = spots.CommonFormat.Section.map()=> {
+        //     return (`<div class="row row-cols-1 row-cols-md-3 g-4">
+        //   <div class="col">
+        //     <div class="card h-100">
+        //               <img src="${spots.CommonFormat.Section.}" class="card-img-top">
+        //       <div class="card-body">
+        //         <h5 class="card-title">Card title</h5>
+        //         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        //       </div>
+        //       <div class="card-footer">
+        //         <small class="text-body-secondary">Last updated 3 mins ago</small>
+        //       </div>
+        //     </div>
+        //   </div>`)
+        // }
+        console.log(spots.CommonFormat.Section[0].file.img[0].text);
+        console.log(spots.CommonFormat.Section);
+    </script>
+}
+
+
