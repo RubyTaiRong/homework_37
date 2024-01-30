@@ -18,25 +18,31 @@
         </div>
     </div>
 </div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100" id="card">
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     <script src="~/js/travel.js"></script>
     <script>
-        // const display = spots.CommonFormat.Section.map()=> {
-        //     return (`<div class="row row-cols-1 row-cols-md-3 g-4">
-        //   <div class="col">
-        //     <div class="card h-100">
-        //               <img src="${spots.CommonFormat.Section.}" class="card-img-top">
-        //       <div class="card-body">
-        //         <h5 class="card-title">Card title</h5>
-        //         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        //       </div>
-        //       <div class="card-footer">
-        //         <small class="text-body-secondary">Last updated 3 mins ago</small>
-        //       </div>
-        //     </div>
-        //   </div>`)
-        // }
+        const display = (spots.CommonFormat.Section).map(() => {
+            return (
+                `
+                                        <img src="${spots.CommonFormat.Section[0].file.img[0].text}" class="card-img-top">
+                                            <div class="card-body">
+                                                  <h5 class="card-title">${spots.CommonFormat.Section[0].stitle}</h5>
+                                                          <p class="card-text">${spots.CommonFormat.Section[0].xbody}</p>
+                                             </div>
+                                             <div class="card-footer">
+                                                   <small class="text-body-secondary" > ${spots.CommonFormat.Section[0].address} </small>
+                                             </div>
+                                          `
+            );
+        });
+        document.getElementById('card').innerHTML = display;
         console.log(spots.CommonFormat.Section[0].file.img[0].text);
         console.log(spots.CommonFormat.Section);
     </script>
