@@ -26,6 +26,10 @@ namespace homework_37.Controllers
         {
             return View();
         }
+        public IActionResult CheckAccount()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

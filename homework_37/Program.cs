@@ -1,6 +1,15 @@
+using homework_37.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//µù¥UMyDB
+builder.Services.AddDbContext<MyDBContext>(
+    options => options.UseSqlServer(
+        builder.Configuration.GetConnectionString("MyDB")
+));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

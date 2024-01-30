@@ -18,11 +18,9 @@
         </div>
     </div>
 </div>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-        <div class="card h-100" id="card">
-        </div>
-    </div>
+<div class="row row-cols-1 row-cols-md-3 g-4" id="card">
+   
+       
 </div>
 
 @section Scripts {
@@ -31,6 +29,8 @@
         const display = (spots.CommonFormat.Section).map(() => {
             return (
                 `
+                         <div class="col">
+                <div class="card h-100">
                                         <img src="${spots.CommonFormat.Section[0].file.img[0].text}" class="card-img-top">
                                             <div class="card-body">
                                                   <h5 class="card-title">${spots.CommonFormat.Section[0].stitle}</h5>
@@ -39,11 +39,16 @@
                                              <div class="card-footer">
                                                    <small class="text-body-secondary" > ${spots.CommonFormat.Section[0].address} </small>
                                              </div>
+                                                      </div>
+            </div>
                                           `
             );
         });
-        document.getElementById('card').innerHTML = display;
-        console.log(spots.CommonFormat.Section[0].file.img[0].text);
+        document.getElementById('card').innerHTML = display.join('');
+        
+        for (let i = 0, Max = spots.CommonFormat.Section.length; i < Max; i++) {
+            console.log(spots.CommonFormat.Section[i].file.img[0].text);
+        }               
         console.log(spots.CommonFormat.Section);
     </script>
 }
